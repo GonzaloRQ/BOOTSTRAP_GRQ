@@ -1,0 +1,149 @@
+#idMainTitle {
+    background-image: url('../media/fondoTitulo.jpg');
+    background-size: cover;
+    height: 500px;
+    transition: height 0.8s ease-in-out;
+    font-family: 'Questrial', sans-serif;
+    position: relative;
+    z-index: 1;
+}
+
+#serviceList {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+h1 {
+    font-family: 'Questrial', sans-serif;
+    font-weight: bold;
+    font-size: 4em;
+    transition: font-size 0.8s ease-in-out;
+}
+
+#dataCard {
+    border-radius: 60px;
+}
+
+.cardsbckg {
+    border-radius: 60px;
+    background-color: #C9DEDB;
+    overflow: hidden;
+    height: 100%;
+}
+
+.cards {
+    border-radius: 60px;
+    background-color: #ffffff;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-text,
+.card-title {
+    font-family: 'Roboto', sans-serif;
+}
+.clssServices {
+    font-family: 'Questrial', sans-serif;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.larger {
+    height: 600px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#title {
+    color: #2F3A45;
+    font-size: 4em;
+    font-weight: bold;
+    margin-top: 100px;
+}
+
+#titleDesc {
+    color: rgb(31, 31, 31);
+    font-size: 1.5em;
+}
+
+.navbar-below.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navbar {
+    background-color: #7F878F;
+}
+
+.btn-align-center {
+    margin-top: auto;
+    border-radius: 20px; /* Ajusta el radio para hacer el botón más redondo */
+    padding: 10px 20px; /* Ajusta el padding para cambiar la longitud del botón */
+}
+
+.btn-outline-success {
+    background-color: #FFFFFF;
+}
+
+#carouselId {
+    max-width: 600px; /* Ajusta el ancho máximo del carousel según tus preferencias */
+    margin: auto; /* Centra el carousel en la página */
+}
+
+.carousel-item img {
+    width: 100%; /* Hace que las imágenes ocupen el 100% del ancho del carousel */
+    height: auto; /* Mantiene la proporción de aspecto original de las imágenes */
+}
+
+.carousel-caption {
+    background: #616C76; /* Añade un fondo semitransparente al caption para mejorar la legibilidad */
+    padding: 10px; /* Ajusta el espacio interior del caption */
+    border-radius: 10px; /* Añade bordes redondeados al caption */
+}
+
+.carousel-inner {
+    border-radius: 50px;
+}
+
+.pClass {
+    font-size: 1.51em;
+}
+
+/* Estilo para los contenedores de tarjetas */
+.cardsbckg {
+    overflow: hidden;
+    transition: transform 0.3s ease;  /* Agrega una transición suave */
+}
+
+/* Cambia la escala al hacer hover */
+.cardsbckg:hover {
+    transform: scale(1.1);  /* Puedes ajustar el valor según tus preferencias */
+}
+
+.accordion-button {
+    background-color:#E0E1DE;
+}
+
+.floating-button {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #2F3A45;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+ }
+
+.floating-button:hover {
+    background-color: #E0E1DE;
+}

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>template</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Questrial">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+        .navbar {
+            transition: background-color 0.5s;
+        }
+
+        .navbar.bg-secondary {
+            background-color: #7F878F; /* Color de fondo al hacer scroll */
+        }
+
+        .navbar.fixed-top {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #idMainTitle.larger {
+            font-size: 2em; /* Tamaño de fuente al hacer scroll */
+        }
+
+        @media (max-width: 576px) {
+            /* Estilos específicos para pantallas pequeñas (hasta 576px) */
+            #title {
+                font-size: 1.5em;
+            }
+
+            .card-title {
+                font-size: 1.2em;
+            }
+
+            .card-text {
+                font-size: 0.9em;
+            }
+
+            .clssServices {
+                font-size: 1.5em;
+            }
+
+            .floating-button {
+                display: none; /* Ocultar el botón flotante en pantallas pequeñas */
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Estilos específicos para pantallas medianas (hasta 768px) */
+            .navbar-toggler {
+                font-size: 0.8em;
+            }
+        }
+
+        @media (max-width: 992px) {
+            /* Estilos específicos para pantallas grandes (hasta 992px) */
+            .navbar-nav {
+                font-size: 0.9em;
+            }
+        }
+
+    </style>
+</head>
+
+<body style="background-color: #F5F5F5">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SecureNet</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
+                aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" aria-current="page">Inicio <span
+                                class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mis Seguros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Novedades</a>
+                    </li>
+                </ul>
+                <form class="d-flex my-2 my-lg-0">
+                    <input class="form-control me-sm-2" type="text" placeholder="Buscar">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEAD CARD -->
+    <div id="idMainTitle" class="card text-center">
+        <div class="card-body">
+            <h1 id="title" class="card-title animate__animated animate__fadeInUp">SecureNet</h1>
+            <p id="titleDesc" class="card-text animate__animated animate__fadeInUp">feeling good, feeling secure</p>
+        </div>
+    </div>
+
+    <div id="serviceList" class="container mx-auto">
+        <h1 class="clssServices animate__animated animate__fadeInUp">Nuestros Servicios:</h1>
+        <div class="row justify-content-center align-items-stretch">
+            <div id="dataCard" class="col-md-4 mb-4">
+                <div class="cardsbckg card text-center h-100">
+                    <div class="cards card-body">
+                        <h2 class="card-title text-dark font-weight-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-car-front" viewBox="0 0 16 16">
+                                <path d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM4.862 4.276 3.906 6.19a.51.51 0 0 0 .497.731c.91-.073 2.35-.17 3.597-.17 1.247 0 2.688.097 3.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 10.691 4H5.309a.5.5 0 0 0-.447.276Z"/>
+                                <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM4.82 3a1.5 1.5 0 0 0-1.379.91l-.792 1.847a1.8 1.8 0 0 1-.853.904.807.807 0 0 0-.43.564L1.03 8.904a1.5 1.5 0 0 0-.03.294v.413c0 .796.62 1.448 1.408 1.484 1.555.07 3.786.155 5.592.155 1.806 0 4.037-.084 5.592-.155A1.479 1.479 0 0 0 15 9.611v-.413c0-.099-.01-.197-.03-.294l-.335-1.68a.807.807 0 0 0-.43-.563 1.807 1.807 0 0 1-.853-.904l-.792-1.848A1.5 1.5 0 0 0 11.18 3H4.82Z"/>
+                              </svg>
+                        </h2>
+                        <h2 class="card-title text-dark font-weight-bold">
+                            Cobertura Integral de Automóviles:</h2>
+                        <p class="card-text">Este servicio proporciona cobertura para vehículos,
+                            protegiendo contra pérdidas financieras resultantes de accidentes,
+                            daños a terceros y otros eventos imprevistos. Además de la responsabilidad
+                            civil obligatoria, la cobertura integral puede incluir reparaciones, asistencia
+                            carretera y protección contra conductores no asegurados.
+                        </p>
+                        <button class="btn btn-outline-primary btn-align-center">Quiero saber más</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="cardsbckg card text-center h-100">
+                    <div class="cards card-body">
+                        <h2 class="card-title text-dark font-weight-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-house-heart-fill" viewBox="0 0 16 16">
+                                <path d="M7.293 1.5a1 1 0 0 1 1.414 0L11 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l2.354 2.353a.5.5 0 0 1-.708.707L8 2.207 1.354 8.853a.5.5 0 1 1-.708-.707L7.293 1.5Z"/>
+                                <path d="m14 9.293-6-6-6 6V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9.293Zm-6-.811c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.691 0-5.018Z"/>
+                              </svg>
+                        </h2>
+                        <h2 class="card-title text-dark font-weight-bold">
+                            Seguro de Vivienda y Contenidos:</h2>
+                        <p class="card-text">Este servicio ofrece protección para propietarios e inquilinos,
+                            cubriendo daños a la estructura de la vivienda, así como a los contenidos personales.
+                            Además de los riesgos comunes como incendios, inundaciones y robos, algunos seguros
+                            de vivienda también incluyen responsabilidad civil, gastos de vivienda temporal y cobertura
+                            para eventos imprevistos.</p>
+                        <button class="btn btn-outline-primary btn-align-center">Quiero saber más</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="cardsbckg card text-center h-100">
+                    <div class="cards card-body">
+                        
+                        <h2 class="card-title text-dark font-weight-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+                                <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
+                              </svg>
+                        </h2>
+                        <h2 class="card-title text-dark font-weight-bold">
+                           
+                            Seguro de Salud Individual o Familiar:</h2>
+                        <p class="card-text">Este tipo de seguro proporciona cobertura médica para individuos y sus familias.
+                            Puede incluir servicios como consultas médicas, hospitalización, medicamentos recetados y atención preventiva.
+                            Algunos seguros de salud también ofrecen opciones adicionales, como cobertura dental y de visión. Además,
+                            pueden incluir servicios de bienestar y descuentos en programas de acondicionamiento físico.</p>
+                        <button class="btn btn-outline-primary btn-align-center">Quiero saber más</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h1 class="clssServices animate__animated animate__fadeInUp">¿Qué es SecureNet?</h1>
+        <div class="row">
+            <!-- Carousel a la izquierda -->
+            <div class="col-md-6">
+                <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                   
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img src="./media/handshake.jpeg" class="w-100 d-block" alt="First slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Confianza</h3>
+                                <p>plena con el cliente.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./media/family.jpg" class="w-100 d-block" alt="Second slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Familia Segura</h3>
+                                <p>más fácil que nunca gracias al asequible precio.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./media/car.jpg" class="w-100 d-block" alt="Third slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Conduce sin miedo</h3>
+                                <p>con nuestro seguro de Automóviles.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId"
+                        data-bs-slide="prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                            <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                          </svg>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselId"
+                        data-bs-slide="next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                          </svg>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Box con información a la derecha -->
+            <div class="col-md-6">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <p class="pClass ">En SecureNet, no solo somos proveedores de seguros; somos socios comprometidos con el bienestar 
+                            financiero y la seguridad de aquellos a quienes servimos. Nuestra misión es evolucionar constantemente, 
+                            superar las expectativas y ser el respaldo confiable que nuestros clientes merecen en todas las etapas de sus vidas y en el desarrollo de sus empresas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h1 class="clssServices animate__animated animate__fadeInUp">Preguntas frecuentes:</h1>
+        <div class="accordion animate__animated animate__fadeInUp" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                ¿Cómo puedo obtener un presupuesto de seguro en SecureNet?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Para obtener un presupuesto de seguro en SecureNet, simplemente visita nuestra página principal y haz clic en la sección 
+                "Obtener Presupuesto". Llena el formulario con la información requerida, como tu tipo de seguro, detalles personales y de propiedad.
+                 Una vez completado, recibirás un presupuesto personalizado en pocos minutos.
+                </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                ¿Cuáles son los métodos de pago aceptados por SecureNet para las pólizas de seguro?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                En SecureNet, ofrecemos diversas opciones de pago para mayor comodidad. Aceptamos pagos mediante tarjetas de crédito y débito, 
+                transferencias bancarias y otros métodos electrónicos seguros. Puedes configurar pagos automáticos para asegurarte de que tu póliza esté siempre al día.
+                </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                ¿Qué debo hacer en caso de presentar un reclamo?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                En caso de necesitar presentar un reclamo, te recomendamos comunicarte de inmediato con nuestro equipo de atención al cliente a través de nuestro número gratuito disponible las 24 horas. 
+                También puedes iniciar el proceso de reclamo a través de nuestra plataforma en línea, proporcionando detalles sobre el incidente. Estaremos aquí para guiarte durante todo el proceso y ayudarte 
+                a resolver tu reclamo de manera rápida y eficiente.
+                </div>
+            </div>
+          </div>
+        </div>  
+    </div>
+    <div class="container animate__animated animate__fadeInUp mt-5">
+        <div class="row align-items-center">
+            <!-- Imagen y tarjeta en la misma columna -->
+            <div class="row-md-1">
+                <div class="card bg-white" style="height: auto; width: 80%;">
+                    <img class="card-img-top" src="./media/app.png" style="size: 20px;" alt="Card image cap">
+                    <div class="card-body bg-white col">
+                        <h5 class="card-title">¿A qué Esperas?</h5>
+                        <p class="card-text">¡Mejora tu calidad de vida y seguridad ya!</p>
+                        <a href="#" id="accederApp" class="botonApp btn btn-primary mt-xxl-5 mb-xxl-5">ACCEDER A LA APLICACIÓN.</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    <button id="expandButton" class="floating-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+          </svg>
+    </button>
+   
+    <footer style="margin: 50px;" class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-body-secondary">© 2023 SecureNet, Inc</p>
+        
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+    
+
+        <ul class="nav col-md-4 justify-content-end">
+
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Menú</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Novedades</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Precios</a></li><br>
+
+           
+          <li class="nav-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-text" viewBox="0 0 16 16">
+            <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
+            <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+        </li>
+
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Idioma</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Sobre Nosotros</a></li>
+       
+          
+          
+        </ul>
+      </footer>
+    <script>
+        window.addEventListener('scroll', function () {
+            var title = document.getElementById('idMainTitle');
+            title.classList.toggle('larger', window.scrollY > 0);
+
+            var navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('bg-secondary', window.scrollY <= title.clientHeight);
+            navbar.classList.toggle('fixed-top', window.scrollY > title.clientHeight);
+
+            //si clicas en botonApp, te lleve al index.html
+            var expandButton = document.getElementById('accederApp');
+            expandButton.addEventListener('click', function () {
+                window.location.href = "./index.html";
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

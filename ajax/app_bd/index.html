@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--index.html-->
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<!-- Enlaces a bootstrap-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<style type="text/css">
+		body {
+			margin-left: 10px;
+		}
+
+		form, 
+		#resultadoBusqueda {
+			display: none;
+		}
+
+		#formularios {
+			margin-top: 60px;
+		}
+	</style>
+	<title>Central de Seguros</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+		  <a class="navbar-brand" href="#">Central de Seguros</a>
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						Clientes
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#" id="mnuAltaCliente">Alta de Clientes</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li><a class="dropdown-item" href="#" id="mnuListadoCliente">Listado de Clientes</a></li>
+						
+						<li><a class="dropdown-item" href="#" id="mnuBuscarCliente">Buscar un Cliente por Id</a></li>
+
+						<li><a class="dropdown-item" href="#" id="mnuListadoPorNombre">Listado de Clientes por Nombre</a></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						Presupuestos
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#" id="mnuAltaPresupuesto">Alta de Presupuesto</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li><a class="dropdown-item" href="#" id="mnuListadoPresupuesto">Listado de Presupuestos</a></li>
+						
+						<li><a class="dropdown-item" href="#" id="mnuBuscarPresupuesto">Buscar un Presupuesto</a></li>
+
+						<li><a class="dropdown-item" href="#" id="mnuListadoPorPrima">Buscar un Presupuesto superior a la prima</a></li>
+
+						
+					</ul>
+				</li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
+	
+	<div class="container" id="formularios">
+
+		<form class="form-horizontal" name="frmListadoPorNombre" id="frmListadoPorNombre">
+			<fieldset>
+				<!-- Form Name -->
+				<legend>Listado de cliente por nombre</legend>
+				
+				<div class="form-group">
+					<label class="col-xs-4 control-label" for="txtListadoNombre">Nombre</label>
+					<div class="col-xs-4">
+						<input id="txtListadoNombre" name="txtListadoNombre" placeholder="Nombre del Cliente"
+							class="form-control input-md" type="text">
+					</div>
+				</div>
+				
+				<!-- Button -->
+				<div class="form-group">
+					<label class="col-xs-4 control-label" for="btnAceptarListadoPorNombre"></label>
+					<div class="col-xs-4">
+						<input type="button" id="btnAceptarListadoPorNombre" name="btnAceptarListadoPorNombre"
+							class="btn btn-primary" value="Aceptar" />
+					</div>
+				</div>
+			</fieldset>
+		</form>
+
+		<form class="form-horizontal" name="frmListadoPorPrima" id="frmListadoPorPrima">
+			<fieldset>
+				<!-- Form Name -->
+				<legend>Listado de presupuesto superior a la prima</legend>
+				
+				<div class="form-group">
+					<label class="col-xs-4 control-label" for="txtListadoPrima">Prima a superar</label>
+					<div class="col-xs-4">
+						<input id="txtListadoPrima" name="txtListadoPrima" placeholder="500"
+							class="form-control input-md" type="number" min="0" step="0.5">
+					</div>
+				</div>
+				
+				<!-- Button -->
+				<div class="form-group">
+					<label class="col-xs-4 control-label" for="btnAceptarListadoPorPrima"></label>
+					<div class="col-xs-4">
+						<input type="button" id="btnAceptarListadoPorPrima" name="btnAceptarListadoPorPrima>"
+							class="btn btn-primary" value="Aceptar" />
+					</div>
+				</div>
+			</fieldset>
+		</form>
+
+		<div class="row">
+			<form class="form-horizontal" name="frmAltaCliente" id="frmAltaCliente">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Alta de Cliente</legend>
+
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtNombre">Nombre</label>
+						<div class="col-xs-4">
+							<input id="txtNombre" name="txtNombre" placeholder="Nombre del Cliente"
+								class="form-control input-md" type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtDireccion">Dirección</label>
+						<div class="col-xs-4">
+							<input id="txtDireccion" name="txtDireccion" placeholder="Direccion del Cliente" class="form-control input-md"
+								type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtFechaNacimiento">Fecha de Nacimiento</label>
+						<div class="col-xs-4">
+							<input id="txtFechaNacimiento" name="txtFechaNacimiento" placeholder="aaaa-mm-dd" class="form-control input-md"
+								type="date">
+						</div>
+					</div>	
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtTlf">Numero de Teléfono</label>
+						<div class="col-xs-4">
+							<input id="txtTlf" name="txtTlf" placeholder="Numero de Teléfono del Cliente" class="form-control input-md"
+								type="text">
+						</div>
+					</div>	
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtCs">Estado Civil</label>
+						<div class="col-xs-4">
+							<input id="txtCs" name="txtCs" placeholder="Estado Civil del Cliente" class="form-control input-md"
+								type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtGenero">Género</label>
+						<div class="col-xs-4">
+							<input id="txtGenero" name="txtGenero" placeholder="Género del Cliente" class="form-control input-md"
+								type="text">
+						</div>
+					</div>	
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnAceptarAltaCliente"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnAceptarAltaCliente" name="btnAceptarAltaCliente"
+								class="btn btn-primary" value="Aceptar" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+
+			<form class="form-horizontal" name="frmAltaPresupuesto" id="frmAltaPresupuesto">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Alta de Presupuesto</legend>
+			
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtNombrePresupuesto">Nombre</label>
+						<div class="col-xs-4">
+							<select class="form-select" id="txtNombrePresupuesto" name="txtNombrePresupuesto">
+								<option value="Presupuesto de Automóvil">Presupuesto de Automóvil</option>
+								<option value="Presupuesto de Hogar">Presupuesto de Hogar</option>
+								<option value="Presupuesto de Vida">Presupuesto de Vida</option>
+								<option value="Presupuesto de Salud">Presupuesto de Salud</option>
+							</select>
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtFechaPresupuesto">Fecha</label>
+						<div class="col-xs-4">
+							<input id="txtFechaPresupuesto" name="txtFechaPresupuesto" placeholder="aaaa-mm-dd" class="form-control input-md"
+								type="date">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtCoberturaPresupuesto">Cobertura</label>
+						<div class="col-xs-4">
+							<input id="txtCoberturaPresupuesto" name="txtCoberturaPresupuesto" placeholder="Cobertura del presupuesto" class="form-control input-md"
+								type="text">
+						</div>
+					</div>    
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="lstAltaCliente">Cliente</label>
+						<div class="col-xs-4">
+							<select class="form-select" id="lstAltaCliente" name="lstAltaCliente">
+								<!-- Aquí debes cargar las opciones de clientes -->
+							</select>
+						</div>
+					</div>    
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtPrimaPresupuesto">Prima</label>
+						<div class="col-xs-4">
+							<input id="txtPrimaPresupuesto" name="txtPrimaPresupuesto" placeholder="Prima del Presupuesto" class="form-control input-md"
+								type="number" min="0" step="0.5">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtEstadoPresupuesto">Estado</label>
+						<div class="col-xs-4">
+							<select class="form-select" id="txtEstadoPresupuesto" name="txtEstadoPresupuesto">
+								<option value="Aprobado">Aprobado</option>
+								<option value="Pendiente">Pendiente</option>
+								<option value="Rechazado">Rechazado</option>
+							</select>
+						</div>
+					</div>    
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnAceptarAltaPresupuesto"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnAceptarAltaPresupuesto" name="btnAceptarAltaPresupuesto"
+								class="btn btn-primary" value="Aceptar" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<form class="form-horizontal" name="frmBuscarCliente" id="frmBuscarCliente">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Buscar un Cliente</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtIdCliente">Id Cliente</label>
+						<div class="col-xs-4">
+							<input id="txtIdCliente" name="txtIdCliente" placeholder="Id del Cliente"
+								class="form-control input-md" type="text">
+						</div>
+					</div>
+	
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnBuscarCliente"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnBuscarCliente" name="btnBuscarCliente"
+								class="btn btn-primary" value="Aceptar" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			 
+			<form class="form-horizontal" name="frmBuscarPresupuesto" id="frmBuscarPresupuesto">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Buscar un Presupuesto</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtIdCliente">Id Presupuesto</label>
+						<div class="col-xs-4">
+							<input id="txtIdPresupuesto" name="txtIdPresupuesto" placeholder="Id del Presupuesto"
+								class="form-control input-md" type="text">
+						</div>
+					</div>
+	
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnBuscarPresupuesto"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnBuscarPresupuesto" name="btnBuscarPresupuesto"
+								class="btn btn-primary" value="Aceptar" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+
+			<form class="form-horizontal" name="frmModificarCliente" id="frmModificarCliente">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Modificar Cliente</legend>
+					
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModIdCliente">IdCliente</label>
+						<div class="col-xs-4">
+							<input disabled id="txtModIdCliente" name="txtModIdCliente" 
+								class="form-control input-md" type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModNombre">Nombre</label>
+						<div class="col-xs-4">
+							<input id="txtModNombre" name="txtModNombre" placeholder="Nombre del Cliente"
+								class="form-control input-md" type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModDireccion">Dirección</label>
+						<div class="col-xs-4">
+							<input id="txtModDireccion" name="txtModDireccion" placeholder="Direccion del Cliente" class="form-control input-md"
+								type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModFechaNacimiento">Fecha de Nacimiento</label>
+						<div class="col-xs-4">
+							<input id="txtModFechaNacimiento" name="txtModFechaNacimiento" placeholder="aaaa-mm-dd" class="form-control input-md"
+								type="date">
+						</div>
+					</div>	
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModTlf">Numero de Teléfono</label>
+						<div class="col-xs-4">
+							<input id="txtModTlf" name="txtModTlf" placeholder="Numero de Teléfono del Cliente" class="form-control input-md"
+								type="text">
+						</div>
+					</div>	
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModCs">Estado Civil</label>
+						<div class="col-xs-4">
+							<input id="txtModCs" name="txtModCs" placeholder="Estado Civil del Cliente" class="form-control input-md"
+								type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModGenero">Género</label>
+						<div class="col-xs-4">
+							<input id="txtModGenero" name="txtModGenero" placeholder="Género del Cliente" class="form-control input-md"
+								type="text">
+						</div>
+					</div>	
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnAceptarModCliente"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnAceptarModCliente" name="btnAceptarModCliente"
+								class="btn btn-primary" value="Aceptar" />
+						</div>
+					</div>
+
+				</fieldset>
+			</form>
+			<form class="form-horizontal" name="frmModificarPresupuesto" id="frmModificarPresupuesto">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Modificar Presupuesto</legend>
+			
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModIdPresupuesto">IdPresupuesto</label>
+						<div class="col-xs-4">
+							<input disabled id="txtModIdPresupuesto" name="txtModIdPresupuesto" 
+								class="form-control input-md" type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModNombrePresupuesto">Nombre</label>
+						<div class="col-xs-4">
+							<select class="form-select" id="txtModNombrePresupuesto" name="txtModNombrePresupuesto">
+								<option value="Presupuesto de Automóvil">Presupuesto de Automóvil</option>
+								<option value="Presupuesto de Hogar">Presupuesto de Hogar</option>
+								<option value="Presupuesto de Vida">Presupuesto de Vida</option>
+								<option value="Presupuesto de Salud">Presupuesto de Salud</option>
+							</select>
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModFechaPresupuesto">Fecha</label>
+						<div class="col-xs-4">
+							<input id="txtModFechaPresupuesto" name="txtModFechaPresupuesto" placeholder="aaaa-mm-dd" class="form-control input-md"
+								type="date">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModCoberturaPresupuesto">Cobertura</label>
+						<div class="col-xs-4">
+							<input id="txtModCoberturaPresupuesto" name="txtModCoberturaPresupuesto" placeholder="Cobertura del presupuesto" class="form-control input-md"
+								type="text">
+						</div>
+					</div>    
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="lstModCliente">Cliente</label>
+						<div class="col-xs-4">
+							<select class="form-select" id="lstModCliente" name="lstModCliente">
+								<!-- Aquí debes cargar las opciones de clientes -->
+							</select>
+						</div>
+					</div>    
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModPrimaPresupuesto">Prima</label>
+						<div class="col-xs-4">
+							<input id="txtModPrimaPresupuesto" name="txtModPrimaPresupuesto" placeholder="Prima del Presupuesto" class="form-control input-md"
+								type="number" min="0" step="0.5">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModEstadoPresupuesto">Estado</label>
+						<div class="col-xs-4">
+							<select class="form-select" id="txtModEstadoPresupuesto" name="txtModEstadoPresupuesto">
+								<option value="Aprobado">Aprobado</option>
+								<option value="Pendiente">Pendiente</option>
+								<option value="Rechazado">Rechazado</option>
+							</select>
+						</div>
+					</div>    
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnAceptarModificarPresupuesto"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnAceptarModificarPresupuesto" name="btnAceptarModificarPresupuesto"
+								class="btn btn-primary" value="Aceptar" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<!--RESULTADOS DE BUSQUEDA-->
+			<div id="resultadoBusqueda"></div>
+			<form class="form-horizontal" name="frmListadoMovimientos" id="frmListadoMovimientos">
+				<fieldset>
+
+					<!-- Form Name -->
+					<legend>Listado de movimientos</legend>
+
+					<!-- Date input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtFechaInicio">Fecha de inicio</label>
+						<div class="col-xs-4">
+							<input id="txtFechaInicio" name="txtFechaInicio" placeholder="Fecha inicio"
+								class="form-control input-md" type="date">
+
+						</div>
+					</div>
+
+					<!-- Date input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtFechaFin">Fecha de fin</label>
+						<div class="col-xs-4">
+							<input id="txtFechaFin" name="txtFechaFin" placeholder="Fecha fin"
+								class="form-control input-md" type="date">
+
+						</div>
+					</div>
+
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnAceptarListadoMovimientos"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnAceptarListadoMovimientos" name="btnAceptarListadoMovimientos"
+								class="btn btn-primary" value="Aceptar" />
+						</div>
+					</div>
+
+				</fieldset>
+			</form>
+
+		
+		</div>
+	</div>
+	<div class="container" id="listados"></div>
+	<script type="text/javascript" src="js/ajax.js"></script>
+	<script type="text/javascript" src="js/objetos.js"></script>
+	<script type="text/javascript" src="js/codigo.js"></script>
+</body>
+
+</html>
